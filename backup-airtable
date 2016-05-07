@@ -1,0 +1,14 @@
+#!/bin/bash
+
+script_name=$(basename $0)
+if [ -z "${1}" ]; then
+    echo "Usage: ${script_name} <apiKey>"
+    exit 1
+fi
+
+working_dir=$(dirname $0)
+
+cd $working_dir;
+npm install .
+
+./airtable-dump.js $1

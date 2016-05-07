@@ -1,0 +1,15 @@
+{
+  "name": "airtable-dump",
+  "version": "0.0.1",
+  "description": "Airtable base backups",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/ottomata/airtable-dump"
+  },
+  "license": "Apache-2.0",
+  "main": "./dump.js",
+  "dependencies": {
+    "airtable": "0.4.1",
+    "mkdirp": "0.5.1"
+  }
+}

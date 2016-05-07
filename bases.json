@@ -1,0 +1,21 @@
+{
+    "Nonprofit Grant Tracker": {
+        "id": "apphSfXJoJsYRDRMw",
+        "tables": [
+            "Grant Applications",
+            "Foundations",
+            "Foundation Contacts",
+            "Programs"
+        ]
+    },
+    "Individual and Corporate Donations": {
+        "id": "app2pGyS2NzHYU3ah",
+        "tables": [
+            "Donations",
+            "Designations",
+            "Contacts",
+            "Companies"
+        ]
+    }
+}
+

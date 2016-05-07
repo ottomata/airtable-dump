@@ -5,6 +5,7 @@ var fs = require('fs');
 var mkdirp = require('mkdirp');
 var shelljs = require('shelljs');
 
+
 function build_record(record) {
     return {
         "Base Name": record._table._base._name,
@@ -15,6 +16,7 @@ function build_record(record) {
         "Fields": record.fields
     };
 }
+
 
 function dump_table(table, cb) {
     var dumped_records = [];
@@ -38,13 +40,6 @@ function dump_table(table, cb) {
 
 }
 
-function write_backup(file_name, dumped_records) {
-    fs.writeFile(file_name, JSON.stringify(dumped_records, null, 2), function(error) {
-        if (error) throw error;
-        console.log('Wrote ' + file_name);
-    });
-}
-
 
 function dump_base(base, backup_dir) {
     base.table_names.forEach(function(table_name) {
@@ -54,6 +49,14 @@ function dump_base(base, backup_dir) {
             base(table_name),
             write_backup.bind(undefined, file_name.replace(/\s+/g, "_"))
         );
+    });
+}
+
+
+function write_backup(file_name, dumped_records) {
+    fs.writeFile(file_name, JSON.stringify(dumped_records, null, 2), function(error) {
+        if (error) throw error;
+        console.log('Wrote ' + file_name);
     });
 }
 

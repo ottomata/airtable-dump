@@ -2,7 +2,6 @@
 
 var Airtable = require('airtable');
 var fs = require('fs');
-var cli = require('cli');
 var mkdirp = require('mkdirp');
 var shelljs = require('shelljs');
 
@@ -74,10 +73,6 @@ function backup(bases, backup_dir) {
     }
     // write time of backup
     fs.writeFileSync(backup_dir + '/timestamp.txt', new Date().toISOString());
-}
-
-function zip_directory(dir) {
-
 }
 
 

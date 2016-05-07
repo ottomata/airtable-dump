@@ -1,4 +1,8 @@
-# Usage:
+# Airtable Dump
+
+Super hacky script to backup Airtable data via the Airtable API.
+
+## Usage:
 
 Edit bases.json to list your bases and tables you want to backup.
 

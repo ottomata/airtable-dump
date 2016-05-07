@@ -3,7 +3,6 @@
 var Airtable = require('airtable');
 var fs = require('fs');
 var mkdirp = require('mkdirp');
-var shelljs = require('shelljs');
 
 
 function build_record(record) {

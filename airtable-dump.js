@@ -22,7 +22,7 @@ function dump_table(table, cb) {
 
     table.select({
         maxRecords: 100,
-        view: "Main View"
+        view: "Grid view"
     }).eachPage(function page(records, fetchNextPage) {
         records.forEach(function(record) {
             dumped_records.push(build_record(record));
@@ -85,7 +85,7 @@ var bases = require('./bases.json');
 var api_key = process.argv[2];
 Airtable.configure({apiKey: api_key});
 
-var backup_ts =  new Date().toISOString();
+var backup_ts =  new Date().toISOString().replace(/:/g, '-');
 var backup_dir = 'Airtable_Backups/' + backup_ts
 console.log("Backing up the following bases into " + backup_dir + ":\n ", Object.keys(bases).join('\n  '));
 
